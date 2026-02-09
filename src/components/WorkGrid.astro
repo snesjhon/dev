@@ -33,7 +33,7 @@ const getPrimaryLanguage = (technologies: string[]) => {
           </svg>
 
           <div class="flex-1 min-w-0">
-            <a href="#" class="text-sm font-semibold m-0 text-gh-accent-fg hover:underline truncate block">
+            <a href={item.slug ? `/portfolio/${item.slug}` : '#'} class="text-sm font-semibold m-0 text-gh-accent-fg hover:underline truncate block">
               {item.company}
             </a>
           </div>
