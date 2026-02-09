@@ -42,6 +42,8 @@ const siteTitle = `${title} | ${SITE_TITLE}`;
 
 <script is:inline>
   // Initialize theme before page renders to prevent flash
-  const theme = localStorage.getItem('theme') || 'light';
+  // Check localStorage first, then fall back to OS preference
+  const theme = localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', theme);
 </script>
